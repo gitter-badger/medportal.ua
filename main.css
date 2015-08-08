@@ -1,0 +1,274 @@
+* {
+	margin:0;
+	padding:0;
+}
+body  {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#505a5d;
+	background: #FFF url(images/templateBackground.jpg) repeat-x left top;
+}
+h1 {
+	color:#2f9dea;
+	font-size:14px;
+}
+a {
+	color:#5caddc;
+	text-decoration:none;
+}
+a:hover {
+	color:#085f75;
+	
+}
+#container { 
+	width: 980px;  
+	margin: 0 auto;
+	background:#ffffff;
+} 
+#header { 
+
+}
+.headerTop {
+}
+.logo {
+	float:left;
+	color:#00b0e4;
+	font-size:48px;
+	padding:10px 0 0 20px;
+}
+.logo span {
+	font-size:18px;
+	color:#9aa0ab;
+}
+.logo img {
+	border:0;
+}
+.search {
+	margin-left:700px;
+	padding:35px 20px 0 0;
+}
+.search input {
+	height:24px;
+}
+.si {
+	float:left;
+	padding-top:10px;
+}
+.search input[type="submit"]{
+    padding: 2px;
+    margin-top:10px;
+      
+    font-weight:bold;
+    color:#333;
+    background:white;
+    border:none;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #67f3f6, #27a1ec);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow:0 1px 1px white;
+}
+
+.mainMenu {
+	margin-top:10px;
+	background:url(images/menuBackground.jpg) repeat-x left top;
+	height:54px;
+	text-align:left;
+}
+.mainMenu ul {
+	margin:0;
+	padding:13px 0 0 0;
+}
+.mainMenu li {
+	list-style:none;
+	display:inline;
+	padding:40px;
+}
+.mainMenu a {
+	font-size:18px;
+	color:#ffffff;
+	text-decoration:none;
+}
+.mainMenu a:hover {
+	font-size:18px;
+	color:#085f75;
+	text-decoration:none;
+}
+.mainMenu #active  a {
+	font-size:18px;
+	color:#085f75;
+	text-decoration:none;
+}
+.headerPic {
+	background:url(images/headerBackground.jpg) no-repeat left top;
+	height:317px;
+	margin-bottom:230px;
+}
+.pics {
+	padding:280px 0 0 0;
+	margin-bottom:20px;
+}
+.pics a{
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+    width: 66px;
+    height: 26px;
+    background-image: linear-gradient(to bottom, #fff, #ddd);
+    margin-right: 10px;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 5px;
+}
+.pic1 {
+	width:289px;
+	height:246px;
+	float:left;
+	margin:0 10px 0 35px;
+	background:url(images/b1.jpg) no-repeat left top;
+	color:#27418C;
+	font-size:36px;
+}
+.pic1 span, .pic2 span, .pic3 span {
+	color:#27418c;
+}
+.pic1 img, .pic2 img, .pic3 img {
+	border:0;
+	float:right;
+	padding-right:20px;
+}
+.pic2 {
+	width:289px;
+	height:246px;
+	float:left;
+	margin:0 10px;
+	background:url(images/b2.jpg) no-repeat left top;
+	color:#27418C;
+	font-size:36px;
+}
+.pic3 {
+	width:289px;
+	height:246px;
+	float:left;
+	margin:0 10px;
+	background:url(images/b3.jpg) no-repeat left top;
+	color:#27418C;
+	font-size:36px;
+}
+.allContent {
+	margin:0 20px;
+}
+#sidebar1 {
+	float: left; 
+	width: 269px; 
+}
+input {
+	border:1px solid #b0b8c7;
+}
+.loginTitle {
+	background:url(images/loginTitle.jpg) no-repeat left top;
+	height:46px;
+	width:269px;
+	color:#ffffff;
+	font-size:14px;
+	font-weight:bold;
+}
+.loginTitle .lT {
+	padding:15px 0 0 60px;
+}
+.loginBody {
+	background:#e7eded;
+	padding:0 20px;
+}
+.loginBody input[type="submit"]{
+    padding: 5px;
+    margin: 10px 0;
+    font-weight:bold;
+    color:#333;
+    background:white;
+    border:none;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #67f3f6, #27a1ec);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow:0 1px 1px white;
+}
+
+
+.fr{
+	float:left;
+}
+.ls {
+	margin-left:160px;
+	padding-top:10px;
+}
+.ls img {
+	border:0;
+}
+.loginFooter {
+	background:url(images/loginBottom.jpg) no-repeat left top;
+	height:21px;
+	width:269px;
+}
+#mainContent { 
+	margin: 0 0 0 269px;
+	padding:10px 30px;
+        font-size: 20px;
+} 
+#mainContent img{
+    width: 150px;
+    height: 180px;
+}
+#mainContent h1{
+    font-size: 22px;
+}
+#mainContent pre{
+    font-size: 14px;
+}
+#mainContent a{
+    font-size: 12px;
+}
+#mainContent li>a{
+    font-size: 16px;
+}
+#mainContent li{
+    display: none;
+}
+#mainContent h4:hover li{
+    display: block;
+}
+#footer {
+	height:85px;
+	text-align:center;
+	padding-top:30px;
+	background:url(images/footer.jpg) repeat-x left top;
+	margin-top:20px;
+} 
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+/*.doctor{
+    margin: 10px 0;
+}
+.doctor img{
+    width: 150px;
+    height: 180px;
+}
+.doctor h1{
+    font-size: 22px;
+}
+.doctor a{
+    font-size: 12px;
+}
+
+.news h1{
+    font-size: 18px;
+}
+.news pre{
+    font-size: 14px;
+}
+.news a{
+    font-size: 12px;
+    
+}*/
