@@ -1,0 +1,33 @@
+{
+  "name": "medportal.ua",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "config": "*",
+    "koa": "1.1.2",
+    "koa-router": "*",
+    "koa-ejs": "*",
+    "koa-passport": "*",
+    "koa-bodyparser": "*",
+    "passport-local": "*",
+    "requirejs": "2.1.14",
+    "bower": "*",
+    "cookie-parser": "^1.1.0",
+    "merge" : "*",
+    "thunkify" : "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoryaMogila/medportal.ua.git"
+  },
+  "author": "Borya Mogila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BoryaMogila/medportal.ua/issues"
+  },
+  "homepage": "https://github.com/BoryaMogila/medportal.ua"
+}
