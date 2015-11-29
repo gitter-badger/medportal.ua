@@ -7,18 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "bower": "*",
     "config": "*",
+    "cookie-parser": "^1.1.0",
     "koa": "1.1.2",
-    "koa-router": "*",
-    "koa-ejs": "*",
-    "koa-passport": "*",
     "koa-bodyparser": "*",
+    "koa-compress": "^1.0.8",
+    "koa-ejs": "*",
+    "koa-favicon": "^1.2.0",
+    "koa-passport": "*",
+    "koa-router": "^5.2.3",
+    "koa-static": "^1.5.2",
+    "merge": "*",
+    "mysql-query-promise": "file:../../../../tmp/npm-8288-863f9f4f/git-cache-16ff845cf392/88ba89b12fa67f244813a7565196a8f9f637be1a",
     "passport-local": "*",
     "requirejs": "2.1.14",
-    "bower": "*",
-    "cookie-parser": "^1.1.0",
-    "merge" : "*",
-    "thunkify" : "*"
+    "thunkify": "*"
   },
   "repository": {
     "type": "git",

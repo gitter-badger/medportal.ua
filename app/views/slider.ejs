@@ -1,0 +1,43 @@
+
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+
+    <ol class="carousel-indicators">
+        <% for(var i=0; i< companySlider.length; i++) {%>
+        <li data-target="#myCarousel" data-slide-to="<%= i %>" ></li>
+        <% } %>
+    </ol>
+
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <% for(var i=0; i < companySlider.length; i++) {%>
+        <% if(i === 0) {%>
+        <div class="item active">
+            <!-- Set the first background image using inline CSS below. http://placehold.it/1900x1080&text=Slide One-->
+            <div class="fill" style="background-image:url('companyLogo/<%= companySlider[i].company_logoPath %>');"></div>
+            <div class="carousel-caption">
+                <h2><%= companySlider[i].company_name %></h2>
+            </div>
+        </div>
+        <% } else {%>
+        <div class="item">
+            <!-- Set the first background image using inline CSS below. http://placehold.it/1900x1080&text=Slide One-->
+            <div class="fill" style="background-image:url('companyLogo/<%= companySlider[i].company_logoPath %>');"></div>
+            <div class="carousel-caption">
+                <h2><%= companySlider[i].company_name %></h2>
+            </div>
+        </div>
+        <% }%>
+        <% } %>
+
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+
+</header>
