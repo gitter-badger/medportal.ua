@@ -1,11 +1,15 @@
+'use strict'
+
 var router = require('koa-router')();
 
 // responds to /users and /users:id
 router
     .get('/', function *(next) {
+
         if(!this.state.slider) {
             this.state.slider = true;
-            yield this.render('frontpage');
+            let user = this.session.user;
+            yield this.render('frontpage',{user: user});
             this.state.slider = false;
         } else {
             yield this.render('frontpage');
@@ -13,7 +17,5 @@ router
         }
 
     });
-/*.post('/', function *(next) {...}})
- .get('/:id', function *(next) {...});*/
 
 module.exports = router;

@@ -1,0 +1,100 @@
+2015-11-30T12:21:05.952710690 0.464992s notice: Recursively removing directory /var/www/html/medportal.ua/rethinkdb_data/tmp
+2015-11-30T12:21:05.976994709 0.489279s notice: Initializing directory /var/www/html/medportal.ua/rethinkdb_data
+2015-11-30T12:21:05.977154295 0.489434s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/var/www/html/medportal.ua/rethinkdb_data' did not already exist or is empty.)
+2015-11-30T12:21:05.977205982 0.489486s notice: Running rethinkdb 2.1.5-2 (GCC 4.8.2)...
+2015-11-30T12:21:06.027072108 0.539354s notice: Running on Linux 4.0.4-301.fc22.x86_64 x86_64
+2015-11-30T12:21:06.027147813 0.539427s notice: Loading data from directory /var/www/html/medportal.ua/rethinkdb_data
+2015-11-30T12:21:06.472030337 0.984312s info: Automatically using cache size of 100 MB
+2015-11-30T12:21:06.472554938 0.984834s warn: Cache size does not leave much memory for server and query overhead (available memory: 1117 MB).
+2015-11-30T12:21:06.472586482 0.984866s warn: Cache size is very low and may impact performance.
+2015-11-30T12:21:06.582699266 1.094979s notice: Listening for intracluster connections on port 29015
+2015-11-30T12:21:06.634336445 1.146616s notice: Listening for client driver connections on port 28015
+2015-11-30T12:21:06.634484710 1.146764s notice: Listening for administrative HTTP connections on port 8080
+2015-11-30T12:21:06.634485835 1.146765s notice: Listening on addresses: 127.0.0.1, ::1
+2015-11-30T12:21:06.634487746 1.146767s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-11-30T12:21:06.634488135 1.146767s notice: Server ready, "localhost_localdomain_5ud" 09c57bc4-41ad-4116-86ea-fc86a5f70d98
+2015-11-30T12:21:08.124198486 2.636478s notice: A newer version of the RethinkDB server is available: 2.2.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-11-30T12:23:30.745279950 145.257560s info: Table 458664d9-5218-4407-818a-0bc5686b64d5: Added replica on this server.
+2015-11-30T12:23:32.616922389 147.129203s info: Table 458664d9-5218-4407-818a-0bc5686b64d5: Starting a new Raft election for term 1.
+2015-11-30T12:23:32.695041653 147.207321s info: Table 458664d9-5218-4407-818a-0bc5686b64d5: This server is Raft leader for term 1. Latest log index is 0.
+2015-12-01T20:15:27.203061408 0.408254s notice: Running rethinkdb 2.1.5-2 (GCC 4.8.2)...
+2015-12-01T20:15:27.208470422 0.413663s notice: Running on Linux 4.0.4-301.fc22.x86_64 x86_64
+2015-12-01T20:15:27.208590076 0.413778s notice: Loading data from directory /var/www/html/medportal.ua/rethinkdb_data
+2015-12-01T20:15:27.545965251 0.751156s info: Automatically using cache size of 268 MB
+2015-12-01T20:15:27.623077586 0.828266s notice: Listening for intracluster connections on port 29015
+2015-12-01T20:15:27.893482585 1.098671s notice: Listening for client driver connections on port 28015
+2015-12-01T20:15:27.893910149 1.099099s notice: Listening for administrative HTTP connections on port 8080
+2015-12-01T20:15:27.893912700 1.099101s notice: Listening on addresses: 127.0.0.1, ::1
+2015-12-01T20:15:27.893916108 1.099104s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-12-01T20:15:27.893916809 1.099105s notice: Server ready, "localhost_localdomain_5ud" 09c57bc4-41ad-4116-86ea-fc86a5f70d98
+2015-12-01T20:15:28.977830799 2.183020s info: Table 458664d9-5218-4407-818a-0bc5686b64d5: Starting a new Raft election for term 2.
+2015-12-01T20:15:29.057230289 2.262419s info: Table 458664d9-5218-4407-818a-0bc5686b64d5: This server is Raft leader for term 2. Latest log index is 2.
+2015-12-01T20:15:30.061064747 3.266254s notice: A newer version of the RethinkDB server is available: 2.2.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-12-01T22:19:53.432880027 7466.638069s notice: Removing file /var/www/html/medportal.ua/rethinkdb_data/458664d9-5218-4407-818a-0bc5686b64d5
+2015-12-01T22:19:53.432892587 7466.638081s info: Table 458664d9-5218-4407-818a-0bc5686b64d5: Deleted the table.
+2015-12-01T22:49:21.647960253 9234.853148s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Added replica on this server.
+2015-12-01T22:49:22.759790076 9235.964979s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Starting a new Raft election for term 1.
+2015-12-01T22:49:22.814510726 9236.019699s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: This server is Raft leader for term 1. Latest log index is 0.
+2015-12-01T22:49:23.886211223 9237.091400s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T22:52:06.943127878 9400.148316s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:00:33.003207575 9906.208396s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:04:01.656829876 10114.862018s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:10:29.963247761 10503.168436s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:20:25.402051628 11098.607240s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:21:40.982826693 11174.188015s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:31:57.940572856 11791.145761s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:32:49.321293979 11842.526482s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:34:56.491054620 11969.696243s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:35:41.034353064 12014.239541s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:36:16.480166972 12049.685355s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:38:54.075536305 12207.280725s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:39:49.135413330 12262.340602s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:40:19.778034851 12292.983223s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:42:20.766312033 12413.971500s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:44:32.986813584 12546.192002s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:45:02.304984357 12575.510173s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:45:43.982658002 12617.187846s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:47:03.857655465 12697.062844s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-01T23:48:11.594242710 12764.799431s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:25:58.766622573 15031.971811s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:30:16.613845099 15289.819033s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:32:35.306508204 15428.511697s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:35:51.500700080 15624.705888s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:46:12.156748509 16245.361937s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:46:34.109310797 16267.314499s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:48:09.558090689 16362.763279s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:48:51.817294393 16405.022483s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:49:11.303119274 16424.508308s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:50:17.222589886 16490.427778s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:51:30.939043024 16564.144231s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:53:51.930413221 16705.135601s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T00:55:16.441412102 16789.646600s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:09:32.710277639 17645.915466s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:10:01.015751746 17674.220940s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:10:56.653608226 17729.858797s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:11:41.868061898 17775.073250s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:13:32.202974367 17885.408163s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:14:49.205221227 17962.410410s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:15:28.701762487 18001.906951s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:17:01.316215510 18094.521404s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:18:52.001243301 18205.206432s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:19:22.779766388 18235.984955s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:20:21.032981122 18294.238169s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:20:36.576400080 18309.781588s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:20:55.267490383 18328.472679s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:22:19.330495985 18412.535684s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:22:40.187996140 18433.393184s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:23:15.794777028 18468.999965s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:23:45.080351890 18498.285540s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:26:24.219051061 18657.424239s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:27:12.793384711 18705.998573s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:27:39.298824268 18732.504013s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:28:57.111321842 18810.316510s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:29:22.355341423 18835.560530s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:29:41.736854006 18854.942042s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:29:57.990852414 18871.196041s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:30:07.661495726 18880.866684s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:32:26.685736115 19019.890924s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:33:30.687884620 19083.893073s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:33:56.809739777 19110.014928s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-02T01:37:58.919079480 19352.124268s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.

@@ -1,4 +1,4 @@
-module.exports = function render(app, config, locals) {
+module.exports = function render(app, config) {
     "use strict";
 
     let render = require('koa-ejs'),
