@@ -181,6 +181,9 @@ fieldset {
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
+form {
+  margin-top: 10px;
+}
 legend {
   border: 0;
   padding: 0;
@@ -1592,6 +1595,7 @@ pre code {
   overflow-y: scroll;
 }
 .container {
+  height:100%;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -2559,7 +2563,6 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
   height: 40px;
   padding: 8px 12px;
   font-size: 16px;
@@ -4993,6 +4996,7 @@ a.badge:focus {
 .carousel-inner {
     height: 100%;
 }
+
 .fill {
     width: 100%;
     height: 100%;

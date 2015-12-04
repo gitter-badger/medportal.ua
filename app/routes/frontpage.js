@@ -8,7 +8,11 @@ router
 
         if(!this.state.slider) {
             this.state.slider = true;
-            let user = this.session.user;
+            let user = '';
+            if(this.session.passport){
+                user = this.session.passport.user.name;
+            }
+            console.log(user);
             yield this.render('frontpage',{user: user});
             this.state.slider = false;
         } else {

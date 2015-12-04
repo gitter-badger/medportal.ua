@@ -6,7 +6,11 @@ let koa = require('koa'),
     serve = require('koa-static'),
     stateVars = require('./helpers/stateVars');
 
+
+
 let app = koa();
+
+require('./helpers/bodyparser')(app);
 
 require('./helpers/session')(app);
 
@@ -18,8 +22,10 @@ app.use(function * (next){
     this.state = yield stateVars();
     yield next;
 });
-
+require('./helpers/passport')(app);
 app.use(router.routes());
+
+
 
 app.listen(config.server.port, function () {
     console.log('%s listening at port %d', config.app.name, config.server.port);
