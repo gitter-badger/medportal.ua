@@ -2,7 +2,6 @@
 
 let koa = require('koa'),
     config = require('config'),
-    router = require('./routes'),
     serve = require('koa-static'),
     stateVars = require('./helpers/stateVars');
 
@@ -22,8 +21,10 @@ app.use(function * (next){
     this.state = yield stateVars();
     yield next;
 });
+
 require('./helpers/passport')(app);
-app.use(router.routes());
+
+require('./helpers/router')(app);
 
 
 
