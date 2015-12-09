@@ -26,7 +26,7 @@ module.exports = {
         debug: true
     },
     server: {
-        port: 3000
+        port: 4000
     },
     app: {
         name: "medportall"
