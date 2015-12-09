@@ -1,4 +1,8 @@
+'use strict';
+
 module.exports = function bodyparser(app) {
-    var bodyParser = require('koa-bodyparser');
+
+    let bodyParser = require('koa-bodyparser');
+
     app.use(bodyParser());
 };

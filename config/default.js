@@ -17,16 +17,7 @@ module.exports = {
             connectionLimit: 3
         }
     },
-    store: {
-        connection: {
-            host: 'localhost',
-            port: 28015
-        }
-    },
-    sessionStore: {
-        db: 'medportal',
-        table: 'userSid'
-    },
+    sessionKeys: ['medportal', 'users'],
     render: {
         root: "app/views",
         layout: "layout",
@@ -35,7 +26,7 @@ module.exports = {
         debug: true
     },
     server: {
-        port: 4000
+        port: 3000
     },
     app: {
         name: "medportall"

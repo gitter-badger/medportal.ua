@@ -1,6 +1,8 @@
-var query = require('mysql-query-promise');
+'use strict';
 
-var manager = {
+let query = require('mysql-query-promise');
+
+let manager = {
     navSpesialisations: function * (){
         var qs = "SELECT `spasialisation` FROM `doctors`";
         return query(qs, 'master');

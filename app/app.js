@@ -18,7 +18,8 @@ require('./helpers/render.js')(app, config);
 app.use(serve(__dirname + '/../public'));
 
 app.use(function * (next){
-    this.state = yield stateVars();
+    let self = this;
+    yield stateVars(self);
     yield next;
 });
 
@@ -28,6 +29,6 @@ require('./helpers/router')(app);
 
 
 
-app.listen(config.server.port, function () {
+app.listen(config.server.port, "127.0.0.1", function () {
     console.log('%s listening at port %d', config.app.name, config.server.port);
 });

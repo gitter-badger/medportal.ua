@@ -246,3 +246,8 @@
 2015-12-04T17:39:17.469103005 16595.935364s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
 2015-12-04T17:47:38.126453440 17096.592714s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
 2015-12-04T17:55:47.503002381 17585.969263s info: Table 2e9b0730-0fe5-4eed-893b-26a16552b699: Configuration is changing.
+2015-12-05T16:37:38.443637983 63824.325548s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2015-12-05T16:37:38.594761087 63824.476672s notice: Shutting down client connections...
+2015-12-05T16:37:38.620073983 63824.501984s notice: All client connections closed.
+2015-12-05T16:37:38.620080037 63824.501990s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-12-05T16:37:39.766196976 63825.648108s notice: Storage engine shut down.

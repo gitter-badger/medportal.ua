@@ -28,7 +28,11 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Регістрація</a> </li>
+                <% if (session) { %>
+                <li><a href="/logout">Вийти</a></li>
+                <% } else {%>
                 <li><a href="/login">Увійти</a></li>
+                <% } %>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
