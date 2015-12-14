@@ -13,13 +13,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="#">Про здоров’я<span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Медичні клініки</a></li>
+                <li><a href="/companies">Медичні клініки</a></li>
                 <li><a href="#">Запис на прийом</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Спеціальності лікарів<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <% doctorNav.forEach(function (doctorNav) {  %>
-                        <li><a href="#"><%- doctorNav.spasialisation %></a></li>
+                        <li><a href="/spasialisation/<%- doctorNav.spasialisation_id %>"><%- doctorNav.spasialisation_name %></a></li>
                         <% }); %>
                     </ul>
                 </li>

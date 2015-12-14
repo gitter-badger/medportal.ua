@@ -3,12 +3,12 @@
 let query = require('mysql-query-promise');
 
 let manager = {
-    navSpesialisations: function * (){
-        var qs = "SELECT `spasialisation` FROM `doctors`";
+    navSpasialisations: function * (){
+        var qs = "SELECT `spasialisation_name`, `spasialisation_id`  FROM `spasialisation`";
         return query(qs, 'master');
     },
     sliderCompanies: function * (){
-        var qs = "SELECT * FROM `companies`";
+        var qs = "SELECT company_id, company_name, company_logoPath FROM `companies`";
         return yield query(qs, 'master');
     }
 

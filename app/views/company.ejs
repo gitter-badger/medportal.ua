@@ -1,0 +1,86 @@
+<link href="/css/company.css" rel="stylesheet">
+<div class="row">
+
+
+    <div class="col-md-9">
+
+        <div class="thumbnail">
+            <img class="img-responsive" src="/images/companyLogo/<%- company.company_logoPath%>" alt="">
+            <div class="caption-full">
+                <h2><%- company.company_name %></h2>
+                <p><%- company.company_describe %></p>
+                <h3>Адреса:</h3>
+                <p><%- company.company_adress %></p>
+                <h3>Контакти:</h3>
+                <p><%- company.company_contacts %></p>
+                <p><%- company.company_email %></p>
+            </div>
+
+        </div>
+
+        <div class="well">
+
+            <ul class="nav nav-tabs">
+                <% for(var i=0; i < companySpasialisations.length; i++) {%>
+                    <% if(i === 0) {%>
+                        <li class="active"><a href="#<%- i %>" data-toggle="tab"><strong><%- companySpasialisations[i] %></strong></a></li>
+                    <% } else {%>
+                        <li><a href="#<%- i %>" data-toggle="tab"><strong><%- companySpasialisations[i] %></strong></a></li>
+                    <% } %>
+                <% } %>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <% for(var i=0; i < companySpasialisations.length; i++) {%>
+                    <% if(i === 0) {%>
+                        <div class="tab-pane active" id="<%- i %>">
+                            <ul class="list-group">
+                                <% doctors.forEach(function (doctor) {%>
+                                    <% if(companySpasialisations[i] === doctor.spasialisation_name){%>
+                                        <li class="list-group-item">
+                                            <span class="badge">
+                                                <a href="/doctor/<%- doctor.doctor_id %>">подробиці</a>
+                                            </span>
+                                            <strong><%- doctor.doctor_name %></strong>
+                                            <p><%- doctor.doctor_describe%></p>
+                                            <hr>
+                                        </li>
+
+                                    <% } %>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    <% } else {%>
+                        <div class="tab-pane" id="<%- i %>">
+                            <ul class="list-group">
+                                <% doctors.forEach(function (doctor) {%>
+                                    <% if(companySpasialisations[i] === doctor.spasialisation_name){%>
+                                        <li class="list-group-item">
+                                            <span class="badge">
+                                                <a href="/doctor/<%- doctor.doctor_id %>">Запис на прийом</a>
+                                            </span>
+                                            <strong><%- doctor.doctor_name %></strong>
+                                            <p><%- doctor.doctor_describe%></p>
+                                            <hr>
+                                        </li>
+
+                                    <% } %>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    $('#myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>

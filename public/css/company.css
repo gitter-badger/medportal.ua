@@ -27,7 +27,7 @@ div.col-md-9 {
 }
 .badge{
     background-color: #ffffff;
-    border: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
 }
 .badge>a{
     color: #333333;
@@ -35,14 +35,37 @@ div.col-md-9 {
 .badge>a:hover{
     text-decoration: none;
 }
+.badge100{
+     width:50%;
+ }
 .list-group-item{
     border:0px;
 }
 .list-group-item:first-child {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
+    
 }
 .list-group{
     border: 1px solid #dddddd;
     border-top: 0px;
+}
+
+.row{
+    margin-top: 10px;
+}
+
+.btn{
+    margin: 5px;
+}
+.glyphicon-chevron-down{
+    width: 100%;
+}
+
+#content_getDoctorsByCompanyName{
+    display: none;
+}
+
+#content_getDoctorsBySpasialisationName{
+    display: none;
 }

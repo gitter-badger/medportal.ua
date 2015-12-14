@@ -7,14 +7,15 @@ module.exports = function * stateVars(self){
         if(self.session.passport) {
                 if (self.session.passport.user) {
                         self.state.session = true;
-                        console.log(self.session.passport.user);
+
                 } else {
                         self.state.session = false;
                 }
         } else {
                 self.state.session = false;
         }
-        self.state.doctorNav = yield manager.navSpesialisations();
+        self.state.doctorNav = yield manager.navSpasialisations();
+
         self.state.companySlider = yield manager.sliderCompanies();
         self.state.slider = false;
         return self;

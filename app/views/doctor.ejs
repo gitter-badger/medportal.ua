@@ -1,0 +1,126 @@
+<link href="/css/company.css" rel="stylesheet">
+<div class="row">
+
+
+
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img class=".img-thumbnail" src="/images/doctorLogo/<%- doctor.doctor_logo%>" alt="">
+
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-9">
+                <div class="thumbnail">
+                    <div class="caption-full">
+                        <h2><%- doctor.doctor_name %></h2>
+                        <h3><%- doctor.company_name%></h3>
+                        <h4><%- doctor.spasialisation_name %></h4>
+                        <p><%- doctor.doctor_describe %></p>
+                        <h3>Розклад роботи:</h3>
+                        <% if(doctor.monday){%>
+                            <h5>Понеділок: <small><%- doctor.monday[0] %>.00 - <%- doctor.monday[1] %>.00</small></h5>
+                        <% } else{%>
+                            <h5>Понеділок: <small>вихідний</small></h5>
+                        <% }%>
+                        <% if(doctor.tuesday){%>
+                            <h5>Вівторок: <small><%- doctor.tuesday[0] %>.00 - <%- doctor.tuesday[1] %>.00</small></h5>
+                        <% } else{%>
+                            <h5>Вівторок: <small>вихідний</small></h5>
+                        <% }%>
+                        <% if(doctor.wednesday){%>
+                            <h5>Середа: <small><%- doctor.wednesday[0] %>.00 - <%- doctor.wednesday[1] %>.00</small></h5>
+                        <% } else{%>
+                            <h5>Середа: <small>вихідний</small></h5>
+                        <% }%>
+                        <% if(doctor.thursday){%>
+                            <h5>Четверг: <small><%- doctor.thursday[0] %>.00 - <%- doctor.thursday[1] %>.00</small></h5>
+                        <% } else{%>
+                            <h5>Четверг: <small>вихідний</small></h5>
+                        <% }%>
+                        <% if(doctor.friday){%>
+                            <h5>П’ятниця: <small><%- doctor.friday[0] %>.00 - <%- doctor.friday[1] %>.00</small></h5>
+                        <% } else{%>
+                            <h5>П’ятниця: <small>вихідний</small></h5>
+                        <% }%>
+                        <% if(doctor.saturday){%>
+                        <h5>Субота: <small><%- doctor.saturday[0] %>.00 - <%- doctor.saturday[1] %>.00</small></h5>
+                        <% } else{%>
+                        <h5>Субота: <small>вихідний</small></h5>
+                        <% }%>
+                        <% if(doctor.sunday){%>
+                        <h5>Неділя: <small><%- doctor.sunday[0] %>.00 - <%- doctor.sunday[1] %>.00</small></h5>
+                        <% } else{%>
+                        <h5>Неділя: <small>вихідний</small></h5>
+                        <% }%>
+                        <div class="text-right">
+                            <a href="#" class="btn btn-primary">Запис на прийом</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <h3><%- doctor.company_name%></h3>
+                    <div id="content_getDoctorsByCompanyName"></div>
+                    <span class="badge badge100">
+                    <a href="" id="getDoctorsByCompanyName" class="glyphicon glyphicon-chevron-down"></a>
+                        </span>
+                    <h4><%- doctor.spasialisation_name %></h4>
+                    <div id="content_getDoctorsBySpasialisationName"></div>
+                    <span class="badge badge100">
+                        <a href="" id="getDoctorsBySpasialisationName" class="glyphicon glyphicon-chevron-down"></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+</div>
+<script>
+    $('#getDoctorsByCompanyName').click(function(e){
+        var self = this;
+        showDoctors(e, self);
+    });
+    $('#getDoctorsBySpasialisationName').click(function(e){
+        var self = this;
+        showDoctors(e, self);
+    });
+
+    function showDoctors (e, self){
+        e.preventDefault();
+        var data;
+        var id = $(self).attr('id');
+
+        data = $('#content_' + id).text();
+
+
+        if(!data){
+            $.post(
+                    '/ajax/' + id,
+                    {
+                        spasialisation: '<%- doctor.spasialisation_name%>',
+                        company: '<%- doctor.company_name%>',
+                        doctorName: '<%- doctor.doctor_name%>'
+                    },
+                    function(data){
+
+                        var content = $('#content_' + id);
+                        content.html(data);
+                        $('#content_' + id).slideToggle(1000);
+                    })
+        } else{
+            $('#content_' + id).slideToggle(1000);
+        }
+
+        if($(self).hasClass('glyphicon-chevron-down')){
+
+            $(self).removeClass('glyphicon-chevron-down');
+            $(self).addClass('glyphicon-chevron-up');
+
+        } else {
+
+            $(self).removeClass('glyphicon-chevron-up');
+            $(self).addClass('glyphicon-chevron-down');
+        }
+    }
+</script>

@@ -29,6 +29,6 @@ require('./helpers/router')(app);
 
 
 
-app.listen(config.server.port, "127.0.0.1", function () {
+app.listen(config.server.port, function () {
     console.log('%s listening at port %d', config.app.name, config.server.port);
 });
