@@ -10,6 +10,7 @@
     "bower": "*",
     "config": "*",
     "cookie-parser": "^1.1.0",
+    "crypto-js": "^3.1.5",
     "koa": "1.1.2",
     "koa-bodyparser": "2.0.0",
     "koa-compress": "^1.0.8",
@@ -22,6 +23,7 @@
     "koa-static": "^1.5.2",
     "merge": "*",
     "mysql-query-promise": "file:../../../../tmp/npm-8288-863f9f4f/git-cache-16ff845cf392/88ba89b12fa67f244813a7565196a8f9f637be1a",
+    "nodemailer": "^1.10.0",
     "passport-local": "*",
     "requirejs": "2.1.14",
     "thunkify": "*"

@@ -3,7 +3,7 @@
 let query = require('mysql-query-promise');
 
 let manager = {
-    getAllCompanies: function * () {
+    getAllCompanies: function * (limit) {
         var qs = "SELECT * FROM `companies`";
         return query(qs, 'master');
     },

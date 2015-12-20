@@ -29,6 +29,11 @@ module.exports = {
         port: 4000
     },
     app: {
-        name: "medportall"
+        name: "medportall.ua"
+    },
+    nodemailer: {
+        sevice: 'mail.ru',
+        user: 'mogila.malvina@mail.ru',
+        pass: 'borya89@'
     }
 };

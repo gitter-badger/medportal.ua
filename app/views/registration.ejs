@@ -1,0 +1,266 @@
+<link href="/css/registration.css" rel="stylesheet">
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-3">
+        <% companies.forEach(function (company) {  %>
+        <a href="/company/<%- company.company_id %>">
+            <img class="img-responsive" src="/images/companyLogo/<%- company.company_logoPath %>" alt="">
+        </a>
+        <h3><%- company.company_name %></h3>
+        <p><%- company.company_describe %></p>
+        <a class="btn btn-primary" href="/company/<%- company.company_id %>">Подробиці <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+
+        <!-- /.row -->
+
+        <hr>
+        <% }); %>
+    </div>
+    <div class="col-md-9">
+        <h6><%- message %></h6>
+        <form name="registrationForm" id="registrationForm" class="form-horizontal" method="post" >
+            <fieldset>
+                <div class="form-group">
+                    <label for="userName" class="col-lg-2 control-label">Логін</label>
+                    <div class="col-lg-10">
+
+                        <input type="text" class="form-control" id="username"  name="username" placeholder="Ваш логін">
+                        <strong class="error_username"></strong>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Пароль</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Ваш пароль">
+                        <strong class="error_password"></strong>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Пошта</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputEmail" name="email" placeholder="Ваша пошта">
+                        <strong class="error_email"></strong>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPhone_namber" class="col-lg-2 control-label">Номер телефону</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputPhonenamber" name="phonenamber" placeholder="Ваш номер телефону">
+                        <strong class="error_phonenamber"></strong>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">Ім’я</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Ваше ім’я">
+                        <strong class="error_name"></strong>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSecondName" class="col-lg-2 control-label">Прізвище</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputSecondName" name="secondname" placeholder="Ваше прізвище">
+                        <strong class="error_secondname"></strong>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-lg-2 control-label">Дата народження</label>
+                    <div class="col-lg-10 inline">
+                        <select class="form-control" id="date" name="year" >
+                            <option></option>
+                            <% var today = new Date();%>
+                            <% var year = today.getFullYear();%>
+                            <% for(var i = year - 80; i <= year; i++){%>
+                            <option><%- i %></option>
+                            <% } %>
+                        </select>
+                        <select class="form-control"  name="month" >
+                            <option></option>
+                            <% for(var i = 1; i <= 12; i++){%>
+                            <option><%- i %></option>
+                            <% } %>
+                        </select>
+
+                        <select class="form-control"  name="day" >
+                            <option></option>
+                            <% for(var i = 1; i <= 31; i++){%>
+                            <option><%- i %></option>
+                            <% } %>
+                        </select>
+                        <strong class="error_date"></strong>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" id="sendData" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script>
+        $("#sendData").click(function (event) {
+
+            //event.preventDefault();
+
+            validModule.sendData(event);
+            //console.log(registrationForm);
+        })
+
+        var validModule = (function($, window, document){
+
+            var form = {
+                username:"",
+                password: "",
+                email: "",
+                phonenamber: "",
+                name: "",
+                secondname: "",
+                year: "",
+                month: "",
+                day: ""
+                },
+                constract = function(form){
+                    for(key in form){
+                        if(typeof form[key] == 'function') continue;
+                            if(document.forms["registrationForm"]["" + key].value.replace(/\s+/g, '').length){
+                            form[key] = document.forms["registrationForm"]["" + key].value;
+                        }
+                    }
+                },
+                validEmpty = function(form){
+
+                    for(key in form){
+                        if(!form[key]){
+                            if(key == 'year' || key == 'month' || key == 'day'){
+                                $(".error_date").text('Поле обов’язкове для заповнення!');
+                            }
+                            $(".error_" + key).text('Поле обов’язкове для заповнення!');
+
+                        } else{
+                            if(key == 'year' || key == 'month' || key == 'day'){
+                                $(".error_date").text('');
+                            }
+                            $(".error_" + key).text('');
+
+                        }
+                    }
+                },
+                validUser = function(form){
+
+                    if(form.username){
+                        if(/(\s)|([!№;:<>?~`'"@#$%^&*()-+=\/|*,])/g.test(form.username)){
+                            form.username = '';
+                            $('.error_username').text('Це поле не може містити пробіли, або знаки: !,№,;,:,<,>,?,~,`,\',",@,#,$,%,^,&,*,(,),-,+,=,\/,|,*,(,),!,')
+
+                        } else{
+                            $.post(
+                                    '/ajax/validUser',
+                                    {
+                                        username: form.username
+                                    },
+                                    function(data){
+                                        console.log(data);
+                                        if(data.username == form.username){
+                                            form.username = '';
+                                            $('.error_username').text('Користувач з таким логіном вже існує!');
+                                        } else {
+                                            $('.error_username').text('');
+                                        }
+                                    })
+                        }
+                    }
+                },
+                validPassword = function(form){
+                    if(form.password){
+                        if(/(\s)|([!№;:<>?~`'"@#$%^&*()-+=\/|*,])/g.test(form.password)){
+                            form.password = '';
+                            $('.error_password').text('Це поле не може містити пробіли, або знаки: !,№,;,:,<,>,?,~,`,\',",@,#,$,%,^,&,*,(,),-,+,=,\/,|,*,(,),!,')
+
+                        } else if(form.password.length < 5) {
+                            form.password = '';
+                            $('.error_password').text('Пароль повинен бути не меньше 5 символів!')
+                        } else {
+                            $('.error_password').text('');
+
+                        }
+                    }
+                },
+                validEmail = function(form){
+                    if(form.email){
+                        if(!(/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i.test(form.email))){
+                            form.email = '';
+                            $('.error_email').text('Пошта введена невірно');
+
+                        } else{
+                            $('.error_email').text('');
+
+                        }
+                    }
+                },
+                validPhoneNamber = function(form){
+                    if(form.phonenamber){
+                        if((/[A-Za-zА-Яа-я]/i.test(form.phonenamber))|| (/[!№;:<>?~`'"@#$%&*()-+=\/|*,._]/i.test(form.phonenamber))){
+                            form.phonenamber = '';
+                            $('.error_phonenamber').text('Номер введено невірно!')
+                        }else {
+                            $('.error_phonenamber').text('');
+
+                        }
+                    }
+                },
+                validName = function(){
+                    if(form.name){
+                        if(!(/[^0-9!№;:<>?~`'"@#$%^&*()-+=\/|*,._]/i.test(form.name))){
+                            form.name = '';
+                            $('.error_name').text('Ім’я введено невірно!')
+                        }else {
+                            $('.error_name').text('');
+
+                        }
+                    }
+                },
+                validSecondname = function(){
+                    if(form.secondname){
+                        if(!(/[^0-9!№;:<>?~`'"@#$%^&*()-+=\/|*,._]/i.test(form.secondname))){
+                            form.secondname = '';
+                            $('.error_secondname').text('Прізвище введено невірно!')
+                        }else {
+                            $('.error_secondname').text('');
+
+                        }
+                    }
+                },
+                sendData = function(event){
+
+                    constract(form);
+                    validEmpty(form);
+                    validUser(form);
+                    validPassword(form);
+                    validEmail(form);
+                    validPhoneNamber(form);
+                    validName(form);
+                    validSecondname(form);
+                    for(var key in form){
+                        if(!form[key]){
+                            event.preventDefault();
+                            console.log('dsffs')
+                        }
+                    }
+                };
+            return {
+                sendData: sendData
+            }
+        })(jQuery, window, document);
+
+</script>
