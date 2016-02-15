@@ -1,8 +1,10 @@
 
 <form name="siteform" method="post">
-
+    <table>
     <% selectedDates.forEach(function(selectedDate){%>
-    <div id="<%- selectedDate.id %>">
+    <tr id="<%- selectedDate.id %>">
+        <td>Секция № <%- selectedDate.id %></td>
+        <td>
     <select  name="year['<%- selectedDate.id %>']">
         <% for(var i = 0,year = new Date().getFullYear() -5; i < 10; i++){%>
 
@@ -15,9 +17,13 @@
         <option <% if(selectedDate.mounth ==9){%>selected<% } %> value="9">III</option>
         <option <% if(selectedDate.mounth ==12){%>selected<% } %> value="12">IV</option>
     </select>
-    </div>
+        </td>
+    </tr>
     <% }) %>
-    <input type="submit">
+        <tr>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
 </form>
 <button id="createSelect" onclick="createSelect(); return false;">Создать выбор</button>
 
@@ -29,21 +35,21 @@
     var number = <%= selectedDates[selectedDates.length - 1].id %>;
 
 function createSelect(){
-    var lastDiv = document.getElementById(number)
-    var newDiv = document.createElement("div");
-    newDiv.setAttribute('id', number + 1);
-    var selects = '<select  name="year[\'' + (number + 1) + '\']">';
+    var lastTr = document.getElementById(number)
+    var newTr = document.createElement("tr");
+    newTr.setAttribute('id', number + 1);
+    var selects = '<td>Секция № ' + (number + 1) + '</td><td><select  name="year[\'' + (number + 1) + '\']">';
     for(var i = 0,year = new Date().getFullYear() -5; i < 10; i++){
         selects += '<option value="' + (year + i) + '">' + (year + i) + '</option>'
     }
-    selects += '</select><select  name="mounth[\'' + (number + 1) + '\']">';
+    selects += '</select> <select  name="mounth[\'' + (number + 1) + '\']">';
     selects += '<option value="3">I</option>';
     selects += '<option value="6">II</option>';
     selects += '<option value="9">III</option>';
     selects += '<option value="12">IV</option>';
-    selects += '</select>';
-    newDiv.innerHTML = selects;
-    insertAfter(lastDiv, newDiv);
+    selects += '</select></td>';
+    newTr.innerHTML = selects;
+    insertAfter(lastTr, newTr);
     number++;
 }
 
