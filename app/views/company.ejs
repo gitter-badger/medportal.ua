@@ -8,6 +8,7 @@
             <img class="img-responsive" src="/images/companyLogo/<%- company.company_logoPath%>" alt="">
             <div class="caption-full">
                 <h2><%- company.company_name %></h2>
+
                 <p><%- company.company_describe %></p>
                 <h3>Адреса:</h3>
                 <p><%- company.company_adress %></p>
@@ -58,7 +59,7 @@
                                     <% if(companySpasialisations[i] === doctor.spasialisation_name){%>
                                         <li class="list-group-item">
                                             <span class="badge">
-                                                <a href="/doctor/<%- doctor.doctor_id %>">Запис на прийом</a>
+                                                <a href="/doctor/<%- doctor.doctor_id %>">подробиці</a>
                                             </span>
                                             <strong><%- doctor.doctor_name %></strong>
                                             <p><%- doctor.doctor_describe%></p>
@@ -79,8 +80,5 @@
 </div>
 
 <script>
-    $('#myTab a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
+
 </script>

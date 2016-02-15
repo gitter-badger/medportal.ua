@@ -29,11 +29,12 @@ div.col-md-9 {
     background-color: #ffffff;
     border-top: 1px solid #dddddd;
 }
-.badge>a{
+a{
     color: #333333;
 }
-.badge>a:hover{
+a:hover{
     text-decoration: none;
+    color: #333333;
 }
 .badge100{
      width:50%;

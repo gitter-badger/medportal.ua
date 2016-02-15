@@ -10,6 +10,10 @@ let manager = {
     sliderCompanies: function * (){
         var qs = "SELECT company_id, company_name, company_logoPath FROM `companies`";
         return yield query(qs, 'master');
+    },
+    getCompaniesCities: function * (){
+        var qs = "SELECT companyCity_id, companyCity_name FROM `cities`";
+        return yield query(qs, 'master');
     }
 
 };

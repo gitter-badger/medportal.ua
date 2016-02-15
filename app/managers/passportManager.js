@@ -8,7 +8,7 @@ connection.connect();
 
 let manager = {
     getUserByName: function (username, callback){
-        connection.query("SELECT * FROM `users` WHERE name=?",[username], callback)
+        connection.query("SELECT * FROM `users` WHERE name=? AND verify_email=1",[username], callback)
         connection.end;
     }
 }

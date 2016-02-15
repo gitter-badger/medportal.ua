@@ -1,0 +1,55 @@
+
+<form name="siteform" method="post">
+
+    <% selectedDates.forEach(function(selectedDate){%>
+    <div id="<%- selectedDate.id %>">
+    <select  name="year['<%- selectedDate.id %>']">
+        <% for(var i = 0,year = new Date().getFullYear() -5; i < 10; i++){%>
+
+        <option  value="<%- year + i%>" <%- selectedDate.year == year + i ? 'selected' : ''%> ><%- year + i%></option>
+        <% } %>
+    </select>
+    <select name="mounth['<%- selectedDate.id %>']">
+        <option <% if(selectedDate.mounth ==3){%>selected<% } %> value="3">I</option>
+        <option <% if(selectedDate.mounth ==6){%>selected<% } %> value="6">II</option>
+        <option <% if(selectedDate.mounth ==9){%>selected<% } %> value="9">III</option>
+        <option <% if(selectedDate.mounth ==12){%>selected<% } %> value="12">IV</option>
+    </select>
+    </div>
+    <% }) %>
+    <input type="submit">
+</form>
+<button id="createSelect" onclick="createSelect(); return false;">Создать выбор</button>
+
+<script>
+    'use strict';
+    function insertAfter(referenceNode, newNode) {
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
+    var number = <%= selectedDates[selectedDates.length - 1].id %>;
+
+function createSelect(){
+    var lastDiv = document.getElementById(number)
+    var newDiv = document.createElement("div");
+    newDiv.setAttribute('id', number + 1);
+    var selects = '<select  name="year[\'' + (number + 1) + '\']">';
+    for(var i = 0,year = new Date().getFullYear() -5; i < 10; i++){
+        selects += '<option value="' + (year + i) + '">' + (year + i) + '</option>'
+    }
+    selects += '</select><select  name="mounth[\'' + (number + 1) + '\']">';
+    selects += '<option value="3">I</option>';
+    selects += '<option value="6">II</option>';
+    selects += '<option value="9">III</option>';
+    selects += '<option value="12">IV</option>';
+    selects += '</select>';
+    newDiv.innerHTML = selects;
+    insertAfter(lastDiv, newDiv);
+    number++;
+}
+
+
+
+
+
+
+</script>

@@ -4,6 +4,6 @@ let router = require('koa-router')();
 
 
 router
-    .post('/', require('../../controllers/getDoctorsBySpasialisationNameController').postAction);
+    .post('/', require('../../controllers/ajax/getDoctorsBySpasialisationNameController').postAction);
 
 module.exports = router;

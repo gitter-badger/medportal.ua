@@ -7,10 +7,6 @@ let manager = {
         let qs = "SELECT * FROM `companies` LIMIT ?";
         return query(qs, [limit], 'master');
     },
-    getUserForValid: function * (login){
-        let qs = "SELECT name FROM users WHERE name=?";
-        return query(qs, [login], 'master');
-    },
     setUser: function * (newUser, today){
 
         let qs = "INSERT INTO `users`(`login`, `name`, `secondname`, `password`, `phone_number`, `birthday_date`, `email`, `registration_date`) VALUES ('" + newUser.username + "', '" + newUser.name + "', '" + newUser.secondname + "', '" + newUser.password + "', '" + newUser.phonenamber + "', '" + newUser.year + "-" + newUser.month + "-" + newUser.day + "', '" + newUser.email + "', '" + today + "');";

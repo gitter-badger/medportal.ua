@@ -25,7 +25,7 @@
     "mysql-query-promise": "file:../../../../tmp/npm-8288-863f9f4f/git-cache-16ff845cf392/88ba89b12fa67f244813a7565196a8f9f637be1a",
     "nodemailer": "^1.10.0",
     "passport-local": "*",
-    "requirejs": "2.1.14",
+    "requirejs": "^2.1.14",
     "thunkify": "*"
   },
   "repository": {

@@ -3,8 +3,8 @@
 let router = require('koa-router')();
 
 router
-    .get('/', require('../../controllers/loginController').getAction)
-    .post('/', require('../../controllers/loginController').postAction)
+    .get('/', require('../../controllers/user/loginController').getAction)
+    .post('/', require('../../controllers/user/loginController').postAction)
 
 
 module.exports = router;

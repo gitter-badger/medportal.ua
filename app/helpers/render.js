@@ -2,8 +2,7 @@
 
 module.exports = function render(app, config) {
 
-    let render = require('koa-ejs'),
-        path = require('path');
+    let render = require('koa-ejs');
 
     render(app, config.render);
 };

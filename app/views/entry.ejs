@@ -1,0 +1,212 @@
+<link type="text/css" href="/vendor/jquery_datetimepicker/jquery.datetimepicker.css" rel="stylesheet" />
+<link type="text/css" href="/css/entry.css" rel="stylesheet" />
+<script src="/vendor/jquery_datetimepicker/jquery.datetimepicker.js"></script>
+<script src="/js/lib/moment-with-locales.js"></script>
+<script src="/js/lib/entry.js"></script>
+
+
+<div class="row">
+    <div class="col-md-9 col-sm-11">
+
+            <ul class="nav nav-tabs tabs-up" id="friends">
+                <li class=""><a class="media_node span " data-toggle="1tab" data-target="#login" data-ofset="#userChoise" id="userChoise_tab" rel="tooltip"> Авторизація </a></li>
+                <li class=""><a class="media_node span" data-toggle="1tab" data-target="#city" data-ofset="#cityChoise" id="cityChoise_tab" rel="tooltip">Виберіть місто</a></li>
+                <li class=""><a class="media_node span " data-toggle="1tab" data-target="#spasialisation" data-ofset="#spasialisationChoise" id="spasialisationChoise_tab" rel="tooltip">Виберіть спецільність</a></li>
+                <li class=""><a class="media_node span" data-toggle="1tab" data-target="#company" data-ofset="#companyChoise" id="companyChoise_tab" rel="tooltip"> Виберіть клініку</a></li>
+                <li class=""><a class="media_node span" data-toggle="1tab" data-target="#doctor" data-ofset="#doctorChoise" id="doctorChoise_tab" rel="tooltip">Виберіть  лікаря</a></li>
+                <li class=""><a class="media_node span" data-toggle="1tab" data-target="#reseption_stamp" data-ofset="#reseption_stampChoise" id="reseption_stampChoise_tab" rel="tooltip">Виберіть  дату і час</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane" id="login">
+                    <form class="form-horizontal" name="ajaxLogin" method="post">
+                        <fieldset>
+
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-lg-2 control-label">Логін</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputEmail"  name="username" placeholder="Ваш логін">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-lg-2 control-label">Пароль</label>
+                                <div class="col-lg-10">
+                                    <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Ваш пароль">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button type="reset" class="btn btn-default">Cancel</button>
+                                    <button type="submit" action="/ajax/login" id="ajaxLogin" class="btn btn-primary" rel="tooltip">Submit</button>
+                                    <p id="errorMessage"></p>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="tab-pane" id="city">
+                    <% cities.forEach(function(city){%>
+                    <p><a href="<%- city.id%>" class="ajaxCity" rel="tooltip"><%- city.name %></a></p>
+                    <% }); %>
+                </div>
+                <div class="tab-pane" id="spasialisation">
+                    <% spasialisations.forEach(function(spasialisation){%>
+                    <p><a href="<%- spasialisation.id%>" class="ajaxSpasialisation" rel="tooltip"><%- spasialisation.name %></a></p>
+                    <% }); %>
+                </div>
+                <div class="tab-pane" id="company">
+                    <% if(companies){%>
+                        <% companies.forEach(function(company){%>
+                            <p><a href="/ajax/doctors/<%- company.company_id%>" class="ajaxCompany" rel="tooltip"><%- company.company_name %></a></p>
+                        <% }); %>
+                    <% } else {%>
+                            <p><a href="/ajax/doctors/" class="ajaxCompany" rel="tooltip"></a></p>
+                    <% } %>
+                </div>
+                <div class="tab-pane " id="doctor">
+                    <% if(doctors){%>
+                        <% doctors.forEach(function(doctor){%>
+                            <p><a href="/ajax/doctor/<%- doctor.doctor_id %>" class="ajaxDoctors" rel="tooltip"><%- doctor.doctor_name %></a></p>
+                        <% }); %>
+                    <% } else {%>
+                        <p><a href="/ajax/doctor/" class="ajaxDoctors" rel="tooltip"></a></p>
+                    <% } %>
+                </div>
+                <div class="tab-pane urlbox span8" id="reseption_stamp">
+
+                    <div id="datetimepicker"></div>
+                    <div id="timepicker"></div>
+
+
+                </div>
+            </div>
+
+
+    </div>
+    <div class="col-md-3 col-sm-7">
+        <div>
+            <% if(user.name && user.secondname){%>
+                <h3>Ваш вибір <span id="userChoise"><%- user.name + ' ' + user.secondname %></span> :</h3>
+            <% } else {%>
+                <h3>Ваш вибір <span id="userChoise"></span> :</h3>
+            <% } %>
+            <% if(companies){%>
+                <p>Місто: <span id="cityChoise"><%- companies[0].companyCity_name %></span></p>
+                <p>Спеціальність: <span id="spasialisationChoise"><%- companies[0].spasialisation_name %></span></p>
+            <% }else{ %>
+                <p>Місто: <span id="cityChoise"></span></p>
+                <p>Спеціальність: <span id="spasialisationChoise"></span></p>
+            <% } %>
+            <% if(doctors){%>
+                <p>Клініка: <span id="companyChoise"><%- doctors[0].company_name %></span></p>
+            <% }else{ %>
+                <p>Клініка: <span id="companyChoise"></span></p>
+            <% } %>
+            <% if(doctor){%>
+                <p>Лікар: <span  id="doctorChoise"><%- doctor.doctor_name%></span></p>
+            <% }else{ %>
+                <p>Лікар: <span  id="doctorChoise"></span></p>
+            <% } %>
+                <p>Дата прийому: <span  id="reseption_stampChoise"></span></p>
+                <p>Час прийому: <span  id="timeChoise"></span></p>
+        </div>
+        <div class="text-right">
+            <form name="choise" method="POST" action="/choise">
+                <% if(doctor){ %>
+                <input type="text" class="hideForm" name="doctorId" value="<%- doctor.doctor_id %>"/>
+                <% }else{ %>
+                <input type="text" class="hideForm" name="doctorId" value=""/>
+                <% } %>
+                <input type="text" class="hideForm" name="day"/>
+                <input type="text" class="hideForm" name="time"/>
+                <input type="text" class="hideForm" name="userName" value="<%- user.name + ' ' + user.secondname %>"/>
+                <input type="text" class="hideForm" name="userPhone_number" value="<%- user.phone_number %>">
+                <input type="text" class="hideForm" name="userEmail" value="<%- user.email %>"/>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" id="hideButton" class="hideButton btn btn-primary">Зберегти</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    $(function(){
+
+        var choise = {
+            userName: '<%- user.name %>',
+            <% if(companies){%>
+            city: '<%- companies[0].companyCity_name %>',
+            spasialisation: '<%- companies[0].spasialisation_name %>',
+            <% }else{ %>
+            city: '',
+            spasialisation: '',
+            <% } %>
+            <% if(doctors){%>
+            company: '<%- doctors[0].company_name %>',
+            <% }else{ %>
+            company: '',
+            <% } %>
+            <% if(doctor){%>
+            doctorId: '<%- doctor.doctor_id%>',
+            doctor: '<%- doctor.doctor_name%>',
+            <% }else{ %>
+            doctorId: '',
+            doctor: '',
+            <% } %>
+            reseption_stamp:''
+        }
+
+        <% if(companies){%>
+        var selectCompany = {
+            cityId: '<%- companies[0].companyCity_id %>',
+            spasialisationId: '<%- companies[0].spasialisation_id %>'
+        }
+        <% }else{ %>;
+        var selectCompany = {
+            cityId: '',
+            spasialisationId: ''
+        }
+        <% } %>
+        <% if(doctor){ %>
+        var timetable = {
+            monday: '<%- doctor.monday%>'.split(','),
+            tuesday: '<%- doctor.tuesday %>'.split(','),
+            wednesday: '<%- doctor.wednesday %>'.split(','),
+            thursday: '<%- doctor.thursday %>'.split(','),
+            friday: '<%- doctor.friday%>'.split(','),
+            saturday: '<%- doctor.saturday %>'.split(','),
+            sunday: '<%- doctor.sunday %>'.split(',')
+        }
+
+        <% } else { %>
+        var timetable = {};
+        <% } %>
+
+        entry.init(choise, timetable, selectCompany)
+
+
+    });
+
+
+
+
+
+
+
+
+</script>
